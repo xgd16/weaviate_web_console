@@ -1,7 +1,11 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-const DEFAULT_API_BASE = 'http://127.0.0.1:8182'
+/** Docker 构建时传 VITE_DEFAULT_API_BASE="" 使用同源代理，避免 CORS */
+const DEFAULT_API_BASE =
+  import.meta.env.VITE_DEFAULT_API_BASE !== undefined
+    ? import.meta.env.VITE_DEFAULT_API_BASE
+    : 'http://127.0.0.1:8182'
 
 export const useSettingsStore = defineStore(
   'settings',
@@ -10,15 +14,15 @@ export const useSettingsStore = defineStore(
 
     const apiBaseUrlWithV1 = computed(() => {
       const url = apiBaseUrl.value.trim().replace(/\/+$/, '')
-      return url ? `${url}/v1` : `${DEFAULT_API_BASE}/v1`
+      if (url) return `${url}/v1`
+      return DEFAULT_API_BASE ? `${DEFAULT_API_BASE}/v1` : '/v1'
     })
 
-    /** API 请求用：开发模式 + 默认地址时走 Vite 代理 */
+    /** API 请求用：开发模式或同源代理时走相对路径 /v1 */
     const apiRequestBase = computed(() => {
       const full = apiBaseUrlWithV1.value
-      if (import.meta.env.DEV && full === `${DEFAULT_API_BASE}/v1`) {
-        return '/v1'
-      }
+      if (full === '/v1') return '/v1'
+      if (import.meta.env.DEV && full === `${DEFAULT_API_BASE}/v1`) return '/v1'
       return full
     })
 

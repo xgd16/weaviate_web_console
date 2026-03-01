@@ -58,6 +58,23 @@ npm run build
 
 Output: `dist/` (static files, deploy to any static host).
 
+### Docker
+
+镜像内置 nginx 反向代理，将 `/v1` 转发到宿主机 Weaviate，避免 CORS。
+
+```bash
+# 构建镜像
+docker build -t weaviate-web-console .
+
+# 运行（Mac/Windows 可直接用；Linux 需加 --add-host）
+docker run -d -p 3000:80 --name weaviate-console weaviate-web-console
+
+# Linux 需添加（否则无法解析 host.docker.internal）
+docker run -d -p 3000:80 --add-host=host.docker.internal:host-gateway --name weaviate-console weaviate-web-console
+```
+
+浏览器访问 `http://localhost:3000`，默认使用同源 `/v1` 代理连接宿主机 Weaviate（端口 8182）。可在界面右上角齿轮中修改 API 地址。
+
 ### API Configuration
 
 - **Dev:** Change proxy target in `vite.config.ts` if Weaviate is not at `127.0.0.1:8182`
