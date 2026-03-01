@@ -67,6 +67,10 @@ Output: `dist/` (static files, deploy to any static host).
 
 When connected, open: `http://<your-api>/v1/docs`
 
+### Releases
+
+When you [create a GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), the [release workflow](.github/workflows/release.yml) automatically builds the project and uploads `weaviate-web-console-<tag>.zip` (built `dist/` contents) as a release asset. No manual build needed.
+
 ---
 
 <a name="中文"></a>
@@ -128,3 +132,7 @@ npm run build
 ### API 文档
 
 连接成功后访问：`http://<你的API>/v1/docs`
+
+### 发布 Release
+
+在 GitHub 上[创建 Release](https://docs.github.com/zh/repositories/releasing-projects-on-github/managing-releases-in-a-repository) 时，[发布工作流](.github/workflows/release.yml)会自动构建项目，并将 `weaviate-web-console-<tag>.zip`（构建产物 `dist/`）上传为 Release 附件，无需手动构建。
