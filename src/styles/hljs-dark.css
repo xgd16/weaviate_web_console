@@ -1,0 +1,81 @@
+/* highlight.js Atom One Dark 主题，用于 Element Plus 暗色模式 */
+html.dark .code-editor-wrap .hljs {
+  color: #abb2bf;
+  background: transparent !important;
+}
+
+html.dark .code-editor-wrap .hljs-comment,
+html.dark .code-editor-wrap .hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+html.dark .code-editor-wrap .hljs-doctag,
+html.dark .code-editor-wrap .hljs-formula,
+html.dark .code-editor-wrap .hljs-keyword {
+  color: #c678dd;
+}
+
+html.dark .code-editor-wrap .hljs-deletion,
+html.dark .code-editor-wrap .hljs-name,
+html.dark .code-editor-wrap .hljs-section,
+html.dark .code-editor-wrap .hljs-selector-tag,
+html.dark .code-editor-wrap .hljs-subst {
+  color: #e06c75;
+}
+
+html.dark .code-editor-wrap .hljs-literal {
+  color: #56b6c2;
+}
+
+html.dark .code-editor-wrap .hljs-addition,
+html.dark .code-editor-wrap .hljs-attribute,
+html.dark .code-editor-wrap .hljs-meta .hljs-string,
+html.dark .code-editor-wrap .hljs-regexp,
+html.dark .code-editor-wrap .hljs-string {
+  color: #98c379;
+}
+
+html.dark .code-editor-wrap .hljs-attr,
+html.dark .code-editor-wrap .hljs-number,
+html.dark .code-editor-wrap .hljs-selector-attr,
+html.dark .code-editor-wrap .hljs-selector-class,
+html.dark .code-editor-wrap .hljs-selector-pseudo,
+html.dark .code-editor-wrap .hljs-template-variable,
+html.dark .code-editor-wrap .hljs-type,
+html.dark .code-editor-wrap .hljs-variable {
+  color: #d19a66;
+}
+
+html.dark .code-editor-wrap .hljs-bullet,
+html.dark .code-editor-wrap .hljs-link,
+html.dark .code-editor-wrap .hljs-meta,
+html.dark .code-editor-wrap .hljs-selector-id,
+html.dark .code-editor-wrap .hljs-symbol,
+html.dark .code-editor-wrap .hljs-title {
+  color: #61aeee;
+}
+
+html.dark .code-editor-wrap .hljs-built_in,
+html.dark .code-editor-wrap .hljs-class .hljs-title,
+html.dark .code-editor-wrap .hljs-title.class_ {
+  color: #e6c07b;
+}
+
+html.dark .code-editor-wrap .hljs-emphasis {
+  font-style: italic;
+}
+
+html.dark .code-editor-wrap .hljs-strong {
+  font-weight: 700;
+}
+
+html.dark .code-editor-wrap .hljs-link {
+  text-decoration: underline;
+}
+
+/* GraphQL 指令在暗色下的高亮 */
+html.dark .code-editor-wrap .hljs-directive {
+  color: #b392f0;
+  font-weight: 500;
+}

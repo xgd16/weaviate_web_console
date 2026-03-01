@@ -1,0 +1,123 @@
+/* 仅使用 Element Plus 配色变量，支持深色模式 */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--el-bg-color-page);
+}
+
+#app {
+  height: 100%;
+}
+
+#app > * {
+  height: 100%;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-gap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flex-wrap-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link.router-link-active {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+
+html.dark .sidebar-link.router-link-active {
+  background-color: var(--el-color-primary-dark-2);
+  color: var(--el-color-primary-light-3);
+}
+
+.sidebar-link:not(.router-link-active) {
+  color: var(--el-text-color-regular);
+}
+
+.sidebar-link:not(.router-link-active):hover {
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+}
+
+html.dark .sidebar-link:not(.router-link-active):hover {
+  background-color: var(--el-fill-color-dark);
+}
+
+.code-block {
+  max-height: 384px;
+  overflow: auto;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
+}
+
+html.dark .code-block {
+  background-color: var(--el-fill-color-darker);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.quick-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--el-border-color);
+  border-radius: 4px;
+  color: var(--el-text-color-regular);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.quick-link:hover {
+  border-color: var(--el-color-primary);
+  color: var(--el-color-primary);
+}
